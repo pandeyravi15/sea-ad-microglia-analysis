@@ -1,0 +1,14 @@
+# Large data files
+*.h5ad
+*.h5
+*.rds
+*.RData
+*.loom
+
+# Temporary files
+.Rhistory
+.RData
+*.Rproj.user
+
+# Results too large for GitHub
+results/*.rds
