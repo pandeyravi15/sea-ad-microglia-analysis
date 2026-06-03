@@ -37,7 +37,8 @@ adata.layers["counts"] = adata.X.copy()
 sc.pp.normalize_total(adata, target_sum=1e4)
 sc.pp.log1p(adata)
 
-# Setup and train scVI
+# Setup scVI model
+print("\nSetting up scVI model...")
 scvi.model.SCVI.setup_anndata(
     adata,
     layer="counts",
@@ -45,8 +46,21 @@ scvi.model.SCVI.setup_anndata(
     continuous_covariate_keys=["Fraction.mitochrondrial.UMIs"]
 )
 
-model = scvi.model.SCVI(adata, n_layers=2, n_latent=20, gene_likelihood="nb")
-model.train(max_epochs=100, early_stopping=True, batch_size=256)
+# Train scVI model
+print("Training scVI model...")
+model = scvi.model.SCVI(
+    adata,
+    n_layers=2,
+    n_latent=20,
+    gene_likelihood="nb"
+)
+
+model.train(
+    max_epochs=100,
+    early_stopping=True,
+    batch_size=256
+)
+
 print("Training complete!")
 
 # Save latent representation
