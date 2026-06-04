@@ -55,6 +55,7 @@ DAM markers identified in 5XFAD mouse models validated in human SEA-AD data:
 
 ## Repository Structure
 
+```
 sea-ad-microglia-analysis/
 ├── scripts/
 │   ├── scvi_train.py           # scVI training — subset (24K cells)
@@ -88,6 +89,7 @@ sea-ad-microglia-analysis/
 ├── slingshot_pseudotime.csv            # Pseudotime — subset
 └── slingshot_full_pseudotime.csv       # Pseudotime — full dataset
 
+```
 ---
 
 ## Methods
@@ -100,6 +102,7 @@ sea-ad-microglia-analysis/
 
 ### Computational Pipeline
 
+```
 Data loading and QC (Seurat/scanpy)
 ├── Doublet removal
 ├── min_genes=200, min_cells=10
@@ -126,6 +129,7 @@ Trajectory Analysis (Slingshot)
 ├── End: Cluster 0 (primary DAM)
 └── Two divergent lineages identified
 
+```
 ---
 
 ### Requirements
